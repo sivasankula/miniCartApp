@@ -1,0 +1,89 @@
+<div>
+    <mat-card>
+        <div>
+            <mat-card class="headClass">
+                <div class="d-flex justify-content-end">
+                    <div class="totalAndItems">
+                        <div>
+                            {{getTotal()}}
+                        </div>
+                        <div>
+                            {{cartItem1Count + cartItem2Count}}
+                        </div>
+                    </div>
+                    <div>
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">shopping_cart</mat-icon>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end" >
+                    <mat-form-field appearance="fill">
+                        <mat-label>Items</mat-label>
+                        <mat-select>
+                            <mat-option value="select">select</mat-option>
+                            <mat-option value="select"><button class="buttonClass" (click)="deleteItem1()" mat-button>X</button> {{item1?.title}} Qty {{cartItem1Count}}</mat-option>
+                            <mat-option value="select"><button class="buttonClass" (click)="deleteItme2()" mat-button>X</button> {{item2?.title}} Qty {{cartItem2Count}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </mat-card>
+        </div>
+        <div>
+            <div>
+                <mat-card>
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <div>
+                                {{item1?.title}}
+                            </div>
+                            <div>
+                                {{item1?.desc}}
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div>
+                                <button (click)="removeItem1()" class="buttonClass" mat-button>-</button>
+                            </div>
+                            <div>
+                                <input readonly class="inputClass" value={{cartItem1Count}}>
+                            </div>
+                            <div>
+                                <button (click)="addItem1()" class="buttonClass" mat-button>+</button>
+                            </div>
+                        </div>
+                        <div>
+                            {{item1?.price}}
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+            <div>
+                <mat-card>
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <div>
+                                {{item2?.title}}
+                            </div>
+                            <div>
+                                {{item2?.desc}}
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div>
+                                <button (click)="removeItem2()" class="buttonClass" mat-button>-</button>
+                            </div>
+                            <div>
+                                <input readonly class="inputClass" value={{cartItem2Count}}>
+                            </div>
+                            <div>
+                                <button (click)="addItem2()" class="buttonClass" mat-button>+</button>
+                            </div>
+                        </div>
+                        <div>
+                            {{item2?.price}}
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </mat-card>
+</div>
